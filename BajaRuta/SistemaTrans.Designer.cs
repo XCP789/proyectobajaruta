@@ -31,7 +31,7 @@ namespace BajaRuta
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SistemaTrans));
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.webBrowserMapa = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,28 +43,29 @@ namespace BajaRuta
             this.comBoxDestino = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.webView2Control = new Microsoft.Web.WebView2.WinForms.WebView2();
+            this.webBrowserMapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView2Control)).BeginInit();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // webBrowserMapa
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.label1);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel1);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel2);
-            this.flowLayoutPanel1.Controls.Add(this.linkLabel3);
-            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 65);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.webBrowserMapa.BackColor = System.Drawing.Color.White;
+            this.webBrowserMapa.Controls.Add(this.pictureBox1);
+            this.webBrowserMapa.Controls.Add(this.label1);
+            this.webBrowserMapa.Controls.Add(this.label2);
+            this.webBrowserMapa.Controls.Add(this.linkLabel1);
+            this.webBrowserMapa.Controls.Add(this.linkLabel2);
+            this.webBrowserMapa.Controls.Add(this.linkLabel3);
+            this.webBrowserMapa.Controls.Add(this.comboBox1);
+            this.webBrowserMapa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.webBrowserMapa.Location = new System.Drawing.Point(0, 0);
+            this.webBrowserMapa.Name = "webBrowserMapa";
+            this.webBrowserMapa.Size = new System.Drawing.Size(800, 59);
+            this.webBrowserMapa.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -173,8 +174,10 @@ namespace BajaRuta
             "Ojos Negros",
             "CBTIS",
             "San Miguel",
-            "Blvd Costero"});
-            this.comBoxOrigen.Location = new System.Drawing.Point(159, 176);
+            "Blvd Costero",
+            "Fraccionamiento Porticos del Mar",
+            "Valle de Guadalupe"});
+            this.comBoxOrigen.Location = new System.Drawing.Point(174, 149);
             this.comBoxOrigen.Name = "comBoxOrigen";
             this.comBoxOrigen.Size = new System.Drawing.Size(146, 27);
             this.comBoxOrigen.TabIndex = 4;
@@ -194,8 +197,9 @@ namespace BajaRuta
             "UABC Punta Banda",
             "Ojos Negros",
             "CBTIS",
-            "San Miguel"});
-            this.comBoxDestino.Location = new System.Drawing.Point(354, 176);
+            "San Miguel",
+            "La Mision"});
+            this.comBoxDestino.Location = new System.Drawing.Point(354, 149);
             this.comBoxDestino.Name = "comBoxDestino";
             this.comBoxDestino.Size = new System.Drawing.Size(144, 27);
             this.comBoxDestino.TabIndex = 6;
@@ -208,7 +212,7 @@ namespace BajaRuta
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(557, 174);
+            this.btnBuscar.Location = new System.Drawing.Point(555, 149);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 29);
             this.btnBuscar.TabIndex = 7;
@@ -222,28 +226,18 @@ namespace BajaRuta
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(288, 90);
+            this.label3.Location = new System.Drawing.Point(287, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 30);
             this.label3.TabIndex = 8;
             this.label3.Text = "Sistema de Transporte";
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(188, 244);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(444, 194);
-            this.listBox1.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(397, 154);
+            this.label5.Location = new System.Drawing.Point(399, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 11;
@@ -254,11 +248,22 @@ namespace BajaRuta
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(203, 153);
+            this.label7.Location = new System.Drawing.Point(203, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 13;
             this.label7.Text = "Origen";
+            // 
+            // webView2Control
+            // 
+            this.webView2Control.AllowExternalDrop = true;
+            this.webView2Control.CreationProperties = null;
+            this.webView2Control.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.webView2Control.Location = new System.Drawing.Point(123, 195);
+            this.webView2Control.Name = "webView2Control";
+            this.webView2Control.Size = new System.Drawing.Size(581, 306);
+            this.webView2Control.TabIndex = 14;
+            this.webView2Control.ZoomFactor = 1D;
             // 
             // SistemaTrans
             // 
@@ -267,22 +272,23 @@ namespace BajaRuta
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImage = global::BajaRuta.Properties.Resources.mejores_playas_de_ensenada_el_faro;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.Controls.Add(this.webView2Control);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.comBoxDestino);
             this.Controls.Add(this.comBoxOrigen);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.webBrowserMapa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SistemaTrans";
             this.Text = "Sistema de Transporte";
             this.Load += new System.EventHandler(this.Form2_Load);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.webBrowserMapa.ResumeLayout(false);
+            this.webBrowserMapa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.webView2Control)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,12 +296,12 @@ namespace BajaRuta
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+            SetBrowserFeatureControl();
         }
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel webBrowserMapa;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -307,8 +313,8 @@ namespace BajaRuta
         private System.Windows.Forms.ComboBox comBoxDestino;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
+        private Microsoft.Web.WebView2.WinForms.WebView2 webView2Control;
     }
 }

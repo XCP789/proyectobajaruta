@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Win32;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,16 @@ namespace BajaRuta
         public SistemaTrans()
         {
             InitializeComponent();
+        }
+
+        private void SetBrowserFeatureControl()
+        {
+            string appName = System.IO.Path.GetFileName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+
+            using (var key = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION"))
+            {
+                key.SetValue(appName, 11001, RegistryValueKind.DWord);
+            }
         }
 
         private void SistemaTrans_Load(object sender, EventArgs e)
@@ -97,8 +108,8 @@ namespace BajaRuta
                 return;
             }
 
-            string origen = comBoxOrigen.Text;
-            string destino = comBoxDestino.Text;
+            string origen = comBoxOrigen.Text; 
+            string destino = comBoxDestino.Text; 
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -106,11 +117,7 @@ namespace BajaRuta
                 {
                     connection.Open();
 
-                    string query = @"
-                        SELECT r.origen, r.destino, r.tiempo_estimado, r.tarifa, e.nombre AS empresa
-                        FROM ruta r
-                        INNER JOIN empresa e ON r.idEmpresa = e.idEmpresa
-                        WHERE r.origen = @origen AND r.destino = @destino";
+                    string query = "SELECT nombre_ruta, tiempo_estimado, tarifa FROM ruta WHERE origen = @origen AND destino = @destino";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@origen", origen);
@@ -122,15 +129,16 @@ namespace BajaRuta
                         {
                             while (reader.Read())
                             {
-                                string origenRuta = reader["origen"].ToString();
-                                string destinoRuta = reader["destino"].ToString();
+                                string nombreRuta = reader["nombre_ruta"].ToString();
                                 string tiempoEstimado = reader["tiempo_estimado"].ToString();
                                 string tarifa = reader["tarifa"].ToString();
-                                string nombreEmpresa = reader["empresa"].ToString(); 
 
-                                MessageBox.Show($"RUTA DISPONIBLE\n\n" + $"Micro: {nombreEmpresa}\n" + $"Origen: {origenRuta}\nDestino: {destinoRuta}\n" +
-                                                $"Tiempo Estimado: {tiempoEstimado}\nTarifa: ${tarifa}" );
+                                MessageBox.Show($"Ruta: {nombreRuta}\nTiempo Estimado: {tiempoEstimado}\nTarifa: ${tarifa}");
                             }
+
+                            string urlMapa = $"https://www.google.com/maps/dir/{Uri.EscapeDataString(origen)}/{Uri.EscapeDataString(destino)}";
+
+                            webView2Control.Source = new Uri(urlMapa); 
                         }
                         else
                         {
@@ -144,6 +152,7 @@ namespace BajaRuta
                 }
             }
         }
+        
 
         private void comBoxDestino_SelectedIndexChanged(object sender, EventArgs e)
         {
