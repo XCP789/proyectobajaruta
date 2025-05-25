@@ -1,4 +1,6 @@
-﻿namespace BajaRuta
+﻿using System;
+
+namespace BajaRuta
 {
     partial class SistemaTrans
     {
@@ -37,16 +39,12 @@
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comBoxOrigen = new System.Windows.Forms.ComboBox();
+            this.comBoxDestino = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,7 +150,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(668, 18);
+            this.comboBox1.Location = new System.Drawing.Point(668, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(121, 29);
@@ -160,82 +158,63 @@
             this.comboBox1.Text = "Perfil";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // comBoxOrigen
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Transporte Rojo",
-            "Transporte Amarillo",
-            "Transporte Azul",
-            "Transporte Naranja",
-            "Transporte Morado"});
-            this.comboBox2.Location = new System.Drawing.Point(207, 176);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 27);
-            this.comboBox2.TabIndex = 3;
-            this.comboBox2.Text = "Seleccione un micro";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "11 y Mexico",
-            "Centro",
-            "Bonce Lomitas",
-            "Escorpion",
-            "Villas 1-2-3",
-            "Villas 4",
-            "Sauzal",
-            "Zorrillo"});
-            this.comboBox3.Location = new System.Drawing.Point(32, 175);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(146, 27);
-            this.comboBox3.TabIndex = 4;
-            this.comboBox3.Text = "Seleccione una ruta";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(386, 177);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(109, 26);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comBoxOrigen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.comBoxOrigen.FormattingEnabled = true;
+            this.comBoxOrigen.Items.AddRange(new object[] {
             "Centro",
             "Valle Dorado",
-            "Punta Banda",
-            "Obrera",
+            "Presa 89",
             "Zorrillo",
             "Maneadero",
-            "Sauzal"});
-            this.comboBox4.Location = new System.Drawing.Point(518, 175);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(144, 27);
-            this.comboBox4.TabIndex = 6;
-            this.comboBox4.Text = "Seleccione su zona";
+            "Sauzal",
+            "UABC Punta Banda",
+            "Ojos Negros",
+            "CBTIS",
+            "San Miguel",
+            "Blvd Costero"});
+            this.comBoxOrigen.Location = new System.Drawing.Point(159, 176);
+            this.comBoxOrigen.Name = "comBoxOrigen";
+            this.comBoxOrigen.Size = new System.Drawing.Size(146, 27);
+            this.comBoxOrigen.TabIndex = 4;
+            this.comBoxOrigen.Text = "Seleccione una ruta";
             // 
-            // button1
+            // comBoxDestino
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(693, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.comBoxDestino.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.comBoxDestino.FormattingEnabled = true;
+            this.comBoxDestino.Items.AddRange(new object[] {
+            "Centro",
+            "Valle Dorado",
+            "Presa 89",
+            "Zorrillo",
+            "Maneadero",
+            "Sauzal",
+            "UABC Punta Banda",
+            "Ojos Negros",
+            "CBTIS",
+            "San Miguel"});
+            this.comBoxDestino.Location = new System.Drawing.Point(354, 176);
+            this.comBoxDestino.Name = "comBoxDestino";
+            this.comBoxDestino.Size = new System.Drawing.Size(144, 27);
+            this.comBoxDestino.TabIndex = 6;
+            this.comBoxDestino.Text = "Seleccione su zona";
+            this.comBoxDestino.SelectedIndexChanged += new System.EventHandler(this.comBoxDestino_SelectedIndexChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(557, 174);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 29);
+            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // label3
             // 
@@ -249,24 +228,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Sistema de Transporte";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(415, 153);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 19);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Horario";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 19;
-            this.listBox1.Location = new System.Drawing.Point(207, 232);
+            this.listBox1.Location = new System.Drawing.Point(188, 244);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(444, 194);
             this.listBox1.TabIndex = 10;
@@ -276,33 +243,22 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(569, 153);
+            this.label5.Location = new System.Drawing.Point(397, 154);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 19);
+            this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Zona";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(260, 153);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Micros";
+            this.label5.Text = "Destino";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(77, 153);
+            this.label7.Location = new System.Drawing.Point(203, 153);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 19);
+            this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Rutas";
+            this.label7.Text = "Origen";
             // 
             // SistemaTrans
             // 
@@ -313,16 +269,12 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.comBoxDestino);
+            this.Controls.Add(this.comBoxOrigen);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SistemaTrans";
@@ -336,6 +288,11 @@
 
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
+
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
@@ -346,16 +303,12 @@
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comBoxOrigen;
+        private System.Windows.Forms.ComboBox comBoxDestino;
+        private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
     }
 }
