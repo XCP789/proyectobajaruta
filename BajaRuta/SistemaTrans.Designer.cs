@@ -151,7 +151,7 @@ namespace BajaRuta
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(668, 19);
+            this.comboBox1.Location = new System.Drawing.Point(668, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(121, 29);
@@ -259,7 +259,7 @@ namespace BajaRuta
             this.webView2Control.AllowExternalDrop = true;
             this.webView2Control.CreationProperties = null;
             this.webView2Control.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView2Control.Location = new System.Drawing.Point(123, 195);
+            this.webView2Control.Location = new System.Drawing.Point(111, 184);
             this.webView2Control.Name = "webView2Control";
             this.webView2Control.Size = new System.Drawing.Size(581, 306);
             this.webView2Control.TabIndex = 14;
@@ -296,7 +296,7 @@ namespace BajaRuta
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            SetBrowserFeatureControl();
+            
         }
 
         #endregion

@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Win32;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,15 +18,7 @@ namespace BajaRuta
             InitializeComponent();
         }
 
-        private void SetBrowserFeatureControl()
-        {
-            string appName = System.IO.Path.GetFileName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-
-            using (var key = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION"))
-            {
-                key.SetValue(appName, 11001, RegistryValueKind.DWord);
-            }
-        }
+       
 
         private void SistemaTrans_Load(object sender, EventArgs e)
         {
