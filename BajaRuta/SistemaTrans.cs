@@ -18,8 +18,6 @@ namespace BajaRuta
             InitializeComponent();
         }
 
-        
-
         private void SistemaTrans_Load(object sender, EventArgs e)
         {
             string connectionString = "Server=localhost;Database=transporte;Uid=root;Pwd=berenice;";
@@ -108,7 +106,11 @@ namespace BajaRuta
                 {
                     connection.Open();
 
-                    string query = "SELECT nombre_ruta, tiempo_estimado, tarifa FROM ruta WHERE origen = @origen AND destino = @destino";
+                    string query = @"
+                        SELECT r.origen, r.destino, r.tiempo_estimado, r.tarifa, e.nombre AS empresa
+                        FROM ruta r
+                        INNER JOIN empresa e ON r.idEmpresa = e.idEmpresa
+                        WHERE r.origen = @origen AND r.destino = @destino";
 
                     MySqlCommand command = new MySqlCommand(query, connection);
                     command.Parameters.AddWithValue("@origen", origen);
@@ -120,11 +122,14 @@ namespace BajaRuta
                         {
                             while (reader.Read())
                             {
-                                string nombreRuta = reader["nombre_ruta"].ToString();
+                                string origenRuta = reader["origen"].ToString();
+                                string destinoRuta = reader["destino"].ToString();
                                 string tiempoEstimado = reader["tiempo_estimado"].ToString();
                                 string tarifa = reader["tarifa"].ToString();
+                                string nombreEmpresa = reader["empresa"].ToString(); 
 
-                                MessageBox.Show($"Ruta: {nombreRuta}\nTiempo Estimado: {tiempoEstimado}\nTarifa: ${tarifa}");
+                                MessageBox.Show($"RUTA DISPONIBLE\n\n" + $"Micro: {nombreEmpresa}\n" + $"Origen: {origenRuta}\nDestino: {destinoRuta}\n" +
+                                                $"Tiempo Estimado: {tiempoEstimado}\nTarifa: ${tarifa}" );
                             }
                         }
                         else
@@ -146,4 +151,6 @@ namespace BajaRuta
         }
     }
 }
+
+
 
