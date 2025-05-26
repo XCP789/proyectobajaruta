@@ -12,7 +12,7 @@ namespace BajaRuta
         private string Servidor = "localhost";//servidor en el que se encuentra la base de datos
         private string Basedatos = "transporte";//base de datos ya creada
         private string UsuarioId = "root";//usuario de la base de datos 
-        private string Password = "Akary8625";//contraseña del usuario 
+        private string Password = "root1234";//contraseña del usuario 
 
         public Form1()
         {
