@@ -152,7 +152,7 @@ namespace BajaRuta
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(718, 19);
+            this.comboBox1.Location = new System.Drawing.Point(718, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(64, 29);
@@ -178,7 +178,7 @@ namespace BajaRuta
             "Blvd Costero",
             "Fraccionamiento Porticos del Mar",
             "Valle de Guadalupe"});
-            this.comBoxOrigen.Location = new System.Drawing.Point(174, 149);
+            this.comBoxOrigen.Location = new System.Drawing.Point(147, 149);
             this.comBoxOrigen.Name = "comBoxOrigen";
             this.comBoxOrigen.Size = new System.Drawing.Size(146, 27);
             this.comBoxOrigen.TabIndex = 4;
@@ -213,7 +213,7 @@ namespace BajaRuta
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(555, 149);
+            this.btnBuscar.Location = new System.Drawing.Point(579, 147);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 29);
             this.btnBuscar.TabIndex = 7;
@@ -238,7 +238,7 @@ namespace BajaRuta
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(399, 127);
+            this.label5.Location = new System.Drawing.Point(394, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 19);
             this.label5.TabIndex = 11;
@@ -249,7 +249,7 @@ namespace BajaRuta
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(203, 127);
+            this.label7.Location = new System.Drawing.Point(192, 127);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 19);
             this.label7.TabIndex = 13;
@@ -260,9 +260,9 @@ namespace BajaRuta
             this.webView2Control.AllowExternalDrop = true;
             this.webView2Control.CreationProperties = null;
             this.webView2Control.DefaultBackgroundColor = System.Drawing.Color.White;
-            this.webView2Control.Location = new System.Drawing.Point(111, 184);
+            this.webView2Control.Location = new System.Drawing.Point(110, 194);
             this.webView2Control.Name = "webView2Control";
-            this.webView2Control.Size = new System.Drawing.Size(581, 306);
+            this.webView2Control.Size = new System.Drawing.Size(582, 296);
             this.webView2Control.TabIndex = 14;
             this.webView2Control.ZoomFactor = 1D;
             // 

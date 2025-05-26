@@ -151,13 +151,13 @@
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(718, 18);
+            this.comboBox1.Location = new System.Drawing.Point(718, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(66, 29);

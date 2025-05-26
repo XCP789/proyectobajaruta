@@ -79,7 +79,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -88,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(71, 0);
+            this.label2.Location = new System.Drawing.Point(80, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.label2.Size = new System.Drawing.Size(88, 45);
@@ -99,7 +99,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(165, 0);
+            this.label3.Location = new System.Drawing.Point(174, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.label3.Size = new System.Drawing.Size(174, 43);
@@ -113,10 +113,10 @@
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(345, 0);
+            this.linkLabel1.Location = new System.Drawing.Point(354, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Padding = new System.Windows.Forms.Padding(70, 20, 0, 0);
-            this.linkLabel1.Size = new System.Drawing.Size(121, 43);
+            this.linkLabel1.Padding = new System.Windows.Forms.Padding(114, 20, 0, 23);
+            this.linkLabel1.Size = new System.Drawing.Size(165, 66);
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Inicio";
@@ -130,10 +130,10 @@
             this.linkLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(472, 0);
+            this.linkLabel2.Location = new System.Drawing.Point(525, 0);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.linkLabel2.Size = new System.Drawing.Size(179, 43);
+            this.linkLabel2.Padding = new System.Windows.Forms.Padding(6, 20, 0, 23);
+            this.linkLabel2.Size = new System.Drawing.Size(185, 66);
             this.linkLabel2.TabIndex = 2;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Sistema de Transporte";
@@ -144,7 +144,7 @@
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.linkLabel3.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel3.Location = new System.Drawing.Point(657, 0);
+            this.linkLabel3.Location = new System.Drawing.Point(716, 0);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(0, 23);
             this.linkLabel3.TabIndex = 3;
@@ -152,15 +152,16 @@
             // comboBox1
             // 
             this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12.25F, System.Drawing.FontStyle.Bold);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(663, 19);
+            this.comboBox1.Location = new System.Drawing.Point(722, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.comboBox1.Size = new System.Drawing.Size(121, 29);
+            this.comboBox1.Size = new System.Drawing.Size(60, 29);
             this.comboBox1.TabIndex = 2;
             this.comboBox1.Text = "Perfil";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
