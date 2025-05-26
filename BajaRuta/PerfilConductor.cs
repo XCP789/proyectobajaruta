@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +14,23 @@ namespace BajaRuta
 {
     public partial class PerfilConductor: Form
     {
+        public string UsuarioActual { get; internal set; }
+
         public PerfilConductor()
         {
             InitializeComponent();
         }
+        private string ObtenerCadenaConexion()
+        {
+            return "Server=localhost;Database=transporte;User Id=root;Password=berenice;SslMode=None";
+        }
+
+        private DbConnection ObtenerConexion()
+        {
+            return new MySqlConnection(ObtenerCadenaConexion());
+        }
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -65,7 +80,71 @@ namespace BajaRuta
 
         private void button2_Click(object sender, EventArgs e)
         {
+            using (DbConnection conn = ObtenerConexion())
+            {
+                conn.Open();
+                using (DbCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "UPDATE chofer " +
+                                      "SET nombre = @nombre, licencia = @licencia " +
+                                      "WHERE idUsuario = (SELECT idUsuario FROM usuario WHERE username = @username)";
 
+                    cmd.Parameters.AddRange(new[]
+                    {
+                        new MySqlParameter("@nombre", txtNombre.Text),
+                        new MySqlParameter("@licencia", txtLicencia.Text),
+                        new MySqlParameter("@username", UsuarioActual)
+                    });
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    MessageBox.Show(rowsAffected > 0 ? "Datos actualizados correctamente." : "No se pudo actualizar la información.");
+                }
+            }
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLicencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PerfilConductor_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = UsuarioActual;
+            using (DbConnection conn = ObtenerConexion())
+            {
+                conn.Open();
+                using (DbCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT c.nombre, c.licencia FROM chofer c " +
+                                      "INNER JOIN usuario u ON c.idUsuario = u.idUsuario " +
+                                      "WHERE u.username = @username";
+
+                    var param = cmd.CreateParameter();
+                    param.ParameterName = "@username";
+                    param.Value = UsuarioActual;
+                    cmd.Parameters.Add(param);
+
+                    using (DbDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            txtNombre.Text = reader.GetString(0); // Nombre del chofer
+                            txtLicencia.Text = reader.GetString(1); // Licencia del chofer
+                        }
+                    }
+                }
+            }
         }
     }
 }
