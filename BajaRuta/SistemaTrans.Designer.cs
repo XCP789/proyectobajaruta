@@ -152,7 +152,7 @@ namespace BajaRuta
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(718, 18);
+            this.comboBox1.Location = new System.Drawing.Point(718, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(64, 29);
@@ -297,7 +297,7 @@ namespace BajaRuta
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+            //hola doris
         }
 
         #endregion
