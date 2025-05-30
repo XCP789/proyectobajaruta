@@ -157,7 +157,7 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Usuario",
             "Conductor"});
-            this.comboBox1.Location = new System.Drawing.Point(718, 19);
+            this.comboBox1.Location = new System.Drawing.Point(718, 18);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.comboBox1.Size = new System.Drawing.Size(66, 29);
@@ -187,10 +187,11 @@
             this.label4.Location = new System.Drawing.Point(34, 136);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(5);
-            this.label4.Size = new System.Drawing.Size(613, 85);
+            this.label4.Size = new System.Drawing.Size(625, 85);
             this.label4.TabIndex = 2;
-            this.label4.Text = "\r\nEn esta pagina encontrarás toda información acerca de rutas,\r\nhorarios y ubicac" +
-    "ión a tiempo real de transporte publico en Ensenada";
+            this.label4.Text = "\r\nEn esta pagina encontrarás información acerca de unidades\r\nde transporte públic" +
+    "o, consultar rutas y tiempo estimado en Ensenada.";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // pictureBox2
             // 
